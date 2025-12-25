@@ -44,7 +44,7 @@ function makeContribution() {
   try {
     execSync('git add .', { stdio: 'inherit' });
     execSync(`git commit -m "${getRandomCommitMessage()} #${data.count}"`, { stdio: 'inherit' });
-    execSync('git push', { stdio: 'inherit' });
+    execSync('git push -u origin main', { stdio: 'inherit' });
     console.log(`\n✅ Contribution #${data.count} pushed successfully!`);
   } catch (error) {
     console.error('❌ Git operation failed:', error.message);
